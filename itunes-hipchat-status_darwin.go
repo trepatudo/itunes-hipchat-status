@@ -34,7 +34,6 @@ type HipChatUser struct {
 	MentionName  string       `json:"mention_name,omitempty"`
 	Timezone     string       `json:"timezone,omitempty"`
 	Email        string       `json:"email,omitempty"`
-	IsGroupAdmin bool         `json:"is_group_admin"`
 }
 
 type presenceInfo struct {

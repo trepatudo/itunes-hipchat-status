@@ -6,14 +6,14 @@ A simple application that takes the current track and artist from iTunes or Spot
 
 - While the application is written in Google Go, it will spawn a process that utilizes AppleScript to check iTunes/Spotify for the current track. So any OSX should do but this is tested against the latest release, 10.9.
 - Compilation requires Google Go 1.5+
-- Atlassian HipChat account
+- Atlassian HipChat account and APIv2 (Found at https://<hipchat url>/account/api)
 
 ## Installation
 
 The application uses only the standard Go libraries so installation is as simple as compiling the binary on your platform; assuming your GOROOT and GOPATH are setup correctly.
 
 ```
-$ git clone https://github.com/christianvozar/itunes-hipchat-status.git
+$ git clone https://github.com/trepatudo/itunes-hipchat-status.git
 $ go build
 ```
 
@@ -21,7 +21,7 @@ $ go build
 
 From the commandline you can utilize the application by passing in your HipChat username and [authentication token](https://www.hipchat.com/docs/apiv2/auth).
 ```
-./itunes-hipchat-status -user=yourname@domain.com -token=XXXXXXXXXXXXXXXXXXXXXXXXXX
+./itunes-hipchat-status -user=yourname@domain.com -token=XXXXXXXXXXXXXXXXXXXXXXXXXX -player=Spotify/iTunes 
 ```
 
 A more appropriate usage is to schedule the updater to run on a cron schedule of every 3 minutes. (Every 3 minutes is due to the rate limits imposed by the HipChat API)
